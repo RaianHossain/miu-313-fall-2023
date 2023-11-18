@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body>
+<body>    
     <div class="container">
         <h1>Lists</h1>
         <a href="{{ route('list_create') }}" class="btn btn-primary mb-2">Create New Task</a>
@@ -20,6 +20,7 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Tasks</th>
+                <th scope="col">Image</th>
                 <th scope="col">Status</th>
                 <th scope="col">Priority</th>
                 <th scope="col">Action</th>
@@ -30,9 +31,17 @@
                 <tr>
                 <th scope="row">{{ $index+1 }}</th>
                 <td>{{ $task->tasks }}</td>
+                <td><img src="{{ asset('images/uploads/'.$task->image) }}" alt="" class="image-fluid w-25 h-25"></td>
                 <td>{{ $task->status }}</td>
                 <td>{{ $task->priority }}</td>
-                <td>check</td>
+                <td>
+                    <a href="{{ route('lists_edit', ['list_id' => $task->id]) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ route('lists_delete', ['task_id' => $task['id']]) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
                 </tr>  
                 @endforeach              
             </tbody>
