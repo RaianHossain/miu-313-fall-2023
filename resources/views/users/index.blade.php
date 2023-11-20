@@ -1,6 +1,6 @@
 <x-backend.layouts.master>
     <x-slot name="pageTitle">
-        Users - Index
+        User - Index
     </x-slot>
 
     <x-slot name="breadcrumb">
