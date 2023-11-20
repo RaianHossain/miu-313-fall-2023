@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -38,3 +39,5 @@ Route::post("list/edit", [ListController::class, 'update'])->name("lists_update"
 Route::delete("lists/{task_id}", [ListController::class, 'destroy'])->name("lists_delete");
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
