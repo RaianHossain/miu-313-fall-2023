@@ -11,16 +11,15 @@
 <body>
 
     @auth
-<<<<<<< HEAD
         <div style="border: 3px solid black;">
 
 
-            <div>
-                <h1>How To Start A Blog In 2024</h1>
-                <p>by Shaikh Nayeem Uddin</p>
-                <hr>
-                <p>Updated December 24th, 2023</p>
-                <p>Are you looking for an easy guide on how to start a blog?<br><br>
+            <div class="bg-light pt-4 px-4 m-3 rounded">
+                <h1 class="fw-bold fs-1 mb-0 ">How To Start A Blog In 2024</h1>
+                <p class="mt-0 text-secondary fw-lighter mb-1">by Shaikh Nayeem Uddin</p>
+                <hr class="bg-secondary my-0">
+                <p class="mt-1 text-secondary fw-lighter mb-1">Updated December 24th, 2023</p>
+                <p class="fs-5">Are you looking for an easy guide on how to start a blog?<br><br>
 
                     The step-by-step guide on this page will show you how to create a blog in 20 minutes with just the most
                     basic computer skills. <br><br>
@@ -35,22 +34,23 @@
                     you out.
                 </p>
 
-                <div>
-                    <p><a href="">Edit</a></p>
-                    <form action="" method="">
+                <div class="d-flex gap-2 mb-0 ">
+                    <p class="btn btn-sm btn-warning mb-0"><a class="text-white text-decoration-none"
+                            href="">Edit</a></p>
+                    <form class="mb-0" action="" method="">
                         @csrf
-                        <button>Delete</button>
+                        <button class="btn btn-sm btn-danger ">Delete</button>
                     </form>
                 </div>
-                <p>This actions only available for your own posts.</p>
+                <p class="mt-0 text-secondary fw-lighter pb-2">This actions only available for your own posts.</p>
             </div>
 
-            <div>
-                <h1>How to Start a Blog That Makes You Money</h1>
-                <p>by Asifur Rahman</p>
-                <hr>
-                <p>Updated December 25th, 2023</p>
-                <p>Anyone can start a blog that makes money. Seriously. <br><br>
+            <div class="bg-light pt-4 px-4 m-3 rounded">
+                <h1 class="fw-bold fs-1 mb-0 ">How to Start a Blog That Makes You Money</h1>
+                <p class="mt-0 text-secondary fw-lighter mb-1">by Asifur Rahman</p>
+                <hr class="bg-secondary my-0">
+                <p class="mt-1 text-secondary fw-lighter mb-1">Updated December 25th, 2023</p>
+                <p class="fs-5">Anyone can start a blog that makes money. Seriously. <br><br>
 
                     Some of you can even generate enough money from your blog to quit your job.<br><br>
 
@@ -59,40 +59,40 @@
                     My blog gets over 2,436,100 visitors annually and generates more than one million dollars in revenue.
                 </p>
 
-                <div>
-                    <p><a href="">Edit</a></p>
-                    <form action="" method="">
+                <div class="d-flex gap-2 mb-0 ">
+                    <p class="btn btn-sm btn-warning mb-0"><a class="text-white text-decoration-none"
+                            href="">Edit</a></p>
+                    <form class="mb-0" action="" method="">
                         @csrf
-                        <button>Delete</button>
+                        <button class="btn btn-sm btn-danger ">Delete</button>
                     </form>
                 </div>
-                <p>This actions only available for your own posts.</p>
+                <p class="mt-0 text-secondary fw-lighter pb-2">This actions only available for your own posts.</p>
             </div>
 
             @foreach ($posts as $post)
-                <div>
-                    <h1>{{ $post['title'] }}</h1>
-                    <p>by {{ $post->user->name }}</p>
-                    <hr>
-                    <p>Updated at {{ $post->updated_at }}</p>
-                    <p>{{ $post['body'] }}</p>
+                <div class="bg-light pt-4 px-4 m-3 rounded">
+                    <h1 class="fw-bold fs-1 mb-0 ">{{ $post['title'] }}</h1>
+                    <p class="mt-0 text-secondary fw-lighter mb-1">by {{ $post->user->name }}</p>
+                    <hr class="bg-secondary my-0">
+                    <p class="mt-1 text-secondary fw-lighter mb-1">Updated at {{ $post->updated_at }}</p>
+                    <p class="fs-5">{{ $post['body'] }}</p>
 
-                    <div>
-                        <p><a href="/edit-post/{{ $post->id }}">Edit</a></p>
-                        <form action="/delete-post/{{ $post->id }}" method="POST">
+                    <div class="d-flex gap-2 mb-0 ">
+                        <p class="btn btn-sm btn-warning mb-0"><a class="text-white text-decoration-none"
+                                href="/edit-post/{{ $post->id }}">Edit</a></p>
+                        <form class="mb-0" action="/delete-post/{{ $post->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button>Delete</button>
+                            <button class="btn btn-sm btn-danger ">Delete</button>
                         </form>
                     </div>
-                    <p>This actions only available for your own posts.</p>
+                    <p class="mt-0 text-secondary fw-lighter pb-2">This actions only available for your own posts.</p>
                 </div>
             @endforeach
 
 
         </div>
-=======
->>>>>>> 3da76d2053a73dfdb057a5b7d9077898ec293890
     @else
         <div class="w-50 mx-auto border border-black rounded p-2 m-3">
             <h2>Register</h2>
@@ -121,11 +121,8 @@
 
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 3da76d2053a73dfdb057a5b7d9077898ec293890
     @endauth
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -134,8 +131,4 @@
 
 </html>
 
-<<<<<<< HEAD
-{{-- added for all post --}}
-=======
-{{-- styles added in login form --}}
->>>>>>> 3da76d2053a73dfdb057a5b7d9077898ec293890
+{{-- styles added for all post --}}
