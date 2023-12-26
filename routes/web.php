@@ -19,8 +19,6 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-
-
 Route::get('/', function () {
     // $posts = [];
     // if (auth()->check()) {
@@ -29,6 +27,7 @@ Route::get('/', function () {
     $posts = Post::all();
     return view('home', ['posts' => $posts]);
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -55,6 +54,12 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 // route for our blog
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/login', [UserController::class, 'login']);
 
+// Blog post related routes
+Route::get('/login', function () {
+    
+    return view('login');
+});
 
-// route created to show all posts
+// logout and login route created
