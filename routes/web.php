@@ -1,10 +1,12 @@
 <?php
 
+
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -41,3 +42,8 @@ Route::delete("lists/{task_id}", [ListController::class, 'destroy'])->name("list
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+
+// route for our blog
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/logout', [UserController::class, 'logout']);
