@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index() {
-        $posts = Post::all();        
-        dd($posts[0]->user);
+    public function deletePost(Post $post) {
+        if (auth()->user()->id === $post['user_id']) {
+            $post->delete();
+        }
+        return redirect('/');
     }
+
+   
 }
+
+// delete post controller function created
