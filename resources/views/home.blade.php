@@ -12,7 +12,7 @@
 
     @auth
         <div style="border: 3px solid black;">
-
+            {{-- <h2>All Posts</h2> --}}
 
             <div class="bg-light pt-4 px-4 m-3 rounded">
                 <h1 class="fw-bold fs-1 mb-0 ">How To Start A Blog In 2024</h1>
@@ -93,6 +93,25 @@
 
 
         </div>
+
+        <div style="border: 3px solid black;" class="pt-3 mt-5">
+            <h2 class="ms-3">Create a New Post:</h2>
+
+            <form action="/create-post" method="POST" class="w-75 mx-auto">
+                @csrf
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Title</label>
+                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Post Title">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+                    <textarea class="form-control" name="body" id="exampleFormControlTextarea1" placeholder="body content..."
+                        rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary">Save Post</button>
+            </form>
+        </div>
     @else
         <div class="w-50 mx-auto border border-black rounded p-2 m-3">
             <h2>Register</h2>
@@ -131,4 +150,4 @@
 
 </html>
 
-{{-- styles added for all post --}}
+{{-- form added for create new post --}}
