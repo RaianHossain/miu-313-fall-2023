@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ListController;
-use App\Http\Controllers\UserController;
+
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,36 +19,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/login', function () {
 
-//     return view('welcome');
-// });
 
-// // Route::get('/', function() {
-// //     return view('home');
-// // });
-
-// Route::redirect('/here', '/there');
-// Route::view('/home', 'home');
-
-// Route::get('/categories', [CategoryController::class, 'index']);
-
-// Route::fallback(function() {
-//     return "This route is not available";
-// });
-
-Route::get('/', function() {
-    return "hello world";
-});
-
-Route::get('/student', function () {
-    return "this is from student route";
+Route::get('/', function () {
+    // $posts = [];
+    // if (auth()->check()) {
+    //     $posts = auth()->user()->usersCoolPosts()->latest()->get();
+    // }
+    $posts = Post::all();
+    return view('home', ['posts' => $posts]);
 });
 
 Route::get('/dashboard', function () {
-    return view('/dashboard');
-})->name('dashboard');
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
+require __DIR__.'/auth.php';
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories_index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories_create');
 Route::post('categories/store', [CategoryController::class, 'store'])->name('categories_store');
@@ -60,4 +49,12 @@ Route::delete("lists/{task_id}", [ListController::class, 'destroy'])->name("list
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
-// Route::resource('lists', ListController::class);
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+
+// route for our blog
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/logout', [UserController::class, 'logout']);
+
+
+// route created to show all posts
