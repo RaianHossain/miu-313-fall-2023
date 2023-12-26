@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html lang="en">
 
 <head>
@@ -50,3 +51,6 @@
 </html>
 
 {{-- registration form created by afrin --}}
+=======
+...
+>>>>>>> daf38ff34aa0e251ebb634c68fa90b158b8128a9
