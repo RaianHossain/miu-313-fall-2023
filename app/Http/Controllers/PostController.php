@@ -52,5 +52,3 @@ class PostController extends Controller
         return redirect('/');
     }
 }
-
-// create post function added

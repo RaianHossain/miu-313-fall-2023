@@ -34,4 +34,3 @@ class Post extends Model
 // }
 
 
-// Post model created
