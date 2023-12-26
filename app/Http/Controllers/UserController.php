@@ -26,7 +26,18 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function register(Request $request) {
+        $incomingFields = $request->validate([
+            'name' => ['required', Rule::unique('users', 'name')],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => ['required', 'min:6', 'max:200']
+        ]);
 
+        $incomingFields['password'] = bcrypt($incomingFields['password']);
+        $user = User::create($incomingFields);
+        auth()->login($user);
+        return redirect('/');
+    }
 }
 
-// logout function created
+// register function created
