@@ -62,4 +62,4 @@ Route::get('/login', function () {
     return view('login');
 });
 
-// logout and login route created
+// logout and login route created.
