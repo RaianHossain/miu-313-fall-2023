@@ -10,6 +10,6 @@ class ListModel extends Model
     use HasFactory;
     public $table = 'lists';
 
-    // public $fillable = ["tasks", "status", "priority"];
+    // public $fillable = ["tasks", "status", "priority". "image"];
     public $guarded = [];
 }

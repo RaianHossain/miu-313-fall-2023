@@ -11,6 +11,7 @@
 <body>
 
     @auth
+<<<<<<< HEAD
         <div style="border: 3px solid black;">
 
 
@@ -90,6 +91,8 @@
 
 
         </div>
+=======
+>>>>>>> 3da76d2053a73dfdb057a5b7d9077898ec293890
     @else
         <div class="w-50 mx-auto border border-black rounded p-2 m-3">
             <h2>Register</h2>
@@ -118,8 +121,11 @@
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3da76d2053a73dfdb057a5b7d9077898ec293890
     @endauth
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -128,4 +134,8 @@
 
 </html>
 
+<<<<<<< HEAD
 {{-- added for all post --}}
+=======
+{{-- styles added in login form --}}
+>>>>>>> 3da76d2053a73dfdb057a5b7d9077898ec293890

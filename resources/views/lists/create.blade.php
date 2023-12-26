@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container pt-5">
-    <form action="{{ route('lists_store') }}" method="POST">
+    <form action="{{ route('lists_store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="exampleInputTask">Task</label>
@@ -31,6 +31,10 @@
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control-file" id="image" name="image">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
