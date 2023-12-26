@@ -31,8 +31,15 @@ class PostController extends Controller
         return redirect('/');
     }
 
-   
+    public function showEditScreen(Post $post) {
+        if (auth()->user()->id !== $post['user_id']) {
+            return redirect('/');
+        }
+
+        return view('edit-post', ['post' => $post]);
     }
+
+    
 }
 
-// update post controller function created
+// showEditScreen function created
