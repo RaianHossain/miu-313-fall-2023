@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html lang="en">
 
 <head>
@@ -13,32 +12,30 @@
 
     @auth
     @else
-        <div ">
-                <h2>Register</h2>
-                <form action="/register" method="POST">
-                    @csrf
-                    <div >
-                        <label for="exampleInputEmail1" class="form-label">Username</label>
-                        <input type="text" name="name" class="form-control mb-2" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
+        <div class="w-50 mx-auto border border-black rounded p-2 m-3">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" name="name" class="form-control mb-2" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
 
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
-                        <div id="emailHelp" >We'll never share your email with anyone else.</div>
-                    </div>
-                    <div >
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" name='password' class="form-control" id="exampleInputPassword1">
-                    </div>
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name='password' class="form-control" id="exampleInputPassword1">
+                </div>
 
-                    <button type="submit" >Register</button>
-                </form>
-                <p >Already have an account? Please <a
-                        href="/login">login</a></p>
-            </div>
-
-
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <p class="text-secondary">Already have an account? Please <a class="text-decoration-none"
+                    href="/login">login</a></p>
+        </div>
 
 
 
@@ -50,7 +47,4 @@
 
 </html>
 
-{{-- registration form created by afrin --}}
-=======
-...
->>>>>>> daf38ff34aa0e251ebb634c68fa90b158b8128a9
+{{-- styles added in login form --}}
