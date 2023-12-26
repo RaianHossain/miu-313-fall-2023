@@ -64,5 +64,6 @@ Route::get('/login', function () {
 Route::post('/create-post', [PostController::class, 'createPost']);
 Route::get('/edit-post/{post}', [PostController::class, 'showEditScreen']);
 Route::put('/edit-post/{post}', [PostController::class, 'actuallyUpdatePost']);
+Route::delete('/delete-post/{post}', [PostController::class, 'deletePost']);
 
-// edit post get and put route created
+// delete post route created
